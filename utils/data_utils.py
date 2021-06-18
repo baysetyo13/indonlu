@@ -508,7 +508,7 @@ class DocumentSentimentDataset(Dataset):
     NUM_LABELS = 2
     
     def load_dataset(self, path): 
-        df = pd.read_csv(path, sep='\t', header=None)
+        df = pd.read_csv(path)
         df.columns = ['text','sentiment']
         df['sentiment'] = df['sentiment'].apply(lambda lab: self.LABEL2INDEX[lab])
         return df
