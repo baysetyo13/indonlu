@@ -503,8 +503,8 @@ class EntailmentDataLoader(DataLoader):
 #####
 class DocumentSentimentDataset(Dataset):
     # Static constant variable
-    LABEL2INDEX = {'Non HS': 0, 'HS': 1}
-    INDEX2LABEL = {0: 'Non HS', 1: 'HS'}
+    LABEL2INDEX = {'Non_HS': 0, 'HS': 1}
+    INDEX2LABEL = {0: 'Non_HS', 1: 'HS'}
     NUM_LABELS = 2
     
     def load_dataset(self, path): 
