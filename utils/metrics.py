@@ -77,10 +77,10 @@ def absa_metrics_fn(list_hyp, list_label):
     list_label = list(itertools.chain.from_iterable(list_label))
     
     metrics = {}
-    metrics["ACC"] = accuracy_score(list_label, list_hyp)
-    metrics["F1"] = f1_score(list_label, list_hyp, average='macro')
-    metrics["REC"] = recall_score(list_label, list_hyp, average='macro')
-    metrics["PRE"] = precision_score(list_label, list_hyp, average='macro')
+    metrics["ACC"] = accuracy_score(list_label, list_hyp, zero_division=1)
+    metrics["F1"] = f1_score(list_label, list_hyp, average='macro', zero_division=1)
+    metrics["REC"] = recall_score(list_label, list_hyp, average='macro', zero_division=1)
+    metrics["PRE"] = precision_score(list_label, list_hyp, average='macro', zero_division=1)
     return metrics
 
 def news_categorization_metrics_fn(list_hyp, list_label):
